@@ -1,0 +1,276 @@
+10 Basic JavaScript Industry Project Solutions
+1. Login Validation System
+JavaScript
+function login(username, password) {
+    const validUser = "admin";
+    const validPass = "12345";
+
+    if (username === validUser && password === validPass) {
+        return "Login Successful";
+    } else {
+        return "Invalid Credentials";
+    }
+}
+
+console.log(login("admin", "12345"));
+2. Product Total Price Calculator
+JavaScript
+function calculateTotal(price, quantity) {
+    return price * quantity;
+}
+
+const total = calculateTotal(500, 3);
+console.log("Total Price:", total);
+3. Student Result Grading System
+JavaScript
+function getGrade(marks) {
+    if (marks >= 90) {
+        return "A";
+    } else if (marks >= 75) {
+        return "B";
+    } else if (marks >= 50) {
+        return "C";
+    } else {
+        return "Fail";
+    }
+}
+
+console.log(getGrade(82));
+4. Inventory Stock Checking Feature
+JavaScript
+function checkStock(stock) {
+    if (stock > 0) {
+        return "Product Available";
+    } else {
+        return "Out of Stock";
+    }
+}
+
+console.log(checkStock(10));
+5. Order Status Tracking System
+JavaScript
+function trackOrder(status) {
+    if (status === "pending") {
+        return "Order Pending";
+    } else if (status === "shipped") {
+        return "Order Shipped";
+    } else if (status === "delivered") {
+        return "Order Delivered";
+    } else {
+        return "Invalid Status";
+    }
+}
+
+console.log(trackOrder("shipped"));
+6. Course Management Using Arrays
+JavaScript
+let courses = ["JavaScript", "Node.js"];
+
+function addCourse(course) {
+    courses.push(course);
+}
+
+function removeCourse(course) {
+    courses = courses.filter(c => c !== course);
+}
+
+addCourse("React");
+removeCourse("Node.js");
+
+console.log(courses);
+7. User Registration Module
+JavaScript
+const users = [];
+
+function registerUser(name, email) {
+    const user = {
+        name,
+        email
+    };
+
+    users.push(user);
+    return "User Registered Successfully";
+}
+
+console.log(registerUser("Rahul", "rahul@gmail.com"));
+console.log(users);
+8. Payment Status Checking System
+JavaScript
+function paymentStatus(status) {
+    if (status === true) {
+        return "Payment Successful";
+    } else {
+        return "Payment Failed";
+    }
+}
+
+console.log(paymentStatus(true));
+9. Movie Ticket Booking Price Calculator
+JavaScript
+function ticketPrice(ticketCount, pricePerTicket) {
+    return ticketCount * pricePerTicket;
+}
+
+console.log("Total Amount:", ticketPrice(4, 250));
+10. Customer Feedback Storage System
+JavaScript
+const feedbacks = [];
+
+function addFeedback(name, message) {
+    feedbacks.push({
+        name,
+        message
+    });
+}
+
+addFeedback("Amit", "Excellent Service");
+addFeedback("Riya", "Fast Delivery");
+
+console.log(feedbacks);
+10 JavaScript ES6 Industry Project Solutions
+1. Product Card Mapping System (map)
+JavaScript
+const products = [
+    { id: 1, name: "Laptop", price: 50000 },
+    { id: 2, name: "Mobile", price: 20000 }
+];
+
+const productCards = products.map(product => {
+    return `
+    Product: ${product.name}
+    Price: ₹${product.price}
+    `;
+});
+
+console.log(productCards);
+2. User Profile Dashboard (Destructuring)
+JavaScript
+const user = {
+    name: "Rahul",
+    email: "rahul@gmail.com",
+    city: "Patna"
+};
+
+const { name, email, city } = user;
+
+console.log(name);
+console.log(email);
+console.log(city);
+3. Shopping Cart Total Calculation (reduce)
+JavaScript
+const cart = [
+    { product: "Laptop", price: 50000 },
+    { product: "Mouse", price: 1000 },
+    { product: "Keyboard", price: 2000 }
+];
+
+const total = cart.reduce((sum, item) => sum + item.price, 0);
+
+console.log("Cart Total:", total);
+4. Course Filtering System (filter)
+JavaScript
+const courses = [
+    "JavaScript",
+    "Node.js",
+    "React",
+    "Python"
+];
+
+const filteredCourses = courses.filter(course =>
+    course.includes("Java")
+);
+
+console.log(filteredCourses);
+5. Single Product Details Feature (find)
+JavaScript
+const products = [
+    { id: 1, name: "Laptop" },
+    { id: 2, name: "Mobile" },
+    { id: 3, name: "Tablet" }
+];
+
+const product = products.find(item => item.id === 2);
+
+console.log(product);
+6. Welcome Dashboard Message (Template Literals)
+JavaScript
+const userName = "Rahul";
+const role = "Developer";
+
+const message = `
+Welcome ${userName}
+Role: ${role}
+Have a great day!
+`;
+
+console.log(message);
+7. Async User Data Fetching System (Async/Await)
+JavaScript
+async function fetchUser() {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve({
+                id: 1,
+                name: "Rahul"
+            });
+        }, 2000);
+    });
+}
+
+async function getUser() {
+    const user = await fetchUser();
+    console.log(user);
+}
+
+getUser();
+8. Merge User Profile Feature (Spread Operator)
+JavaScript
+const basicInfo = {
+    name: "Rahul",
+    age: 22
+};
+
+const contactInfo = {
+    email: "rahul@gmail.com",
+    city: "Patna"
+};
+
+const userProfile = {
+    ...basicInfo,
+    ...contactInfo
+};
+
+console.log(userProfile);
+9. Reusable Utility Module (Arrow Functions)
+JavaScript
+const add = (a, b) => a + b;
+
+const subtract = (a, b) => a - b;
+
+const multiply = (a, b) => a * b;
+
+console.log(add(10, 5));
+console.log(subtract(10, 5));
+console.log(multiply(10, 5));
+10. ES6 Student Management System (Combined ES6 Concepts)
+JavaScript
+const students = [
+    { id: 1, name: "Rahul", marks: 85 },
+    { id: 2, name: "Priya", marks: 92 },
+    { id: 3, name: "Amit", marks: 70 }
+];
+
+const topper = students.find(student => student.marks > 90);
+
+const averageMarks =
+    students.reduce((sum, student) => sum + student.marks, 0) /
+    students.length;
+
+const passedStudents =
+    students.filter(student => student.marks >= 75);
+
+console.log("Topper:", topper);
+console.log("Average Marks:", averageMarks);
+console.log("Passed Students:", passedStudents);
+<img width="6496" height="4896" alt="49904" src="https://github.com/user-attachments/assets/a4c4a9c8-909b-4c01-a481-e180446f332c" />
+
